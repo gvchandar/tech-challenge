@@ -12,7 +12,7 @@ Testing
 ---------------------
 ```git clone https://github.com/gvchandar/tech-challenge.git ``` <br>
 ```cd tech-challenge/nestedobject``` <br>
-```chmod 755 getValue.py``` <br>
+```chmod 755 findValue.py``` <br>
 ```./findValue.py a/b/c ```<br> 
 OR<br>
-```./getValue.py x/y/z```
+```./findValue.py x/y/z```
