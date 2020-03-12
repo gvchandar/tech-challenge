@@ -15,4 +15,4 @@ __This challenge is implemented using Python in subfolder  metadata__
 We have a nested object, we would like a function that you pass in the object and a key and get back the value. How this is implemented is up to you. 
 <br/>
 <br/>
-__This challenge is implemented using Terraform in subfolder  nestedobject__
+__This challenge is implemented using Python in subfolder  nestedobject__
