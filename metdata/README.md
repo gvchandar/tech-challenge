@@ -18,9 +18,9 @@ For better key/value pair display install jq library<br />
 
 Testing
 ----------
-chmod 755 metadata.py 
 If no command line argument is provided, the system prints dump of all key values pair in JSON formatted<br />
 ```
+chmod 755 metadata.py 
 ./metadata.py 
 ```
 To get better display of the output , pipe the output to jq<br />
