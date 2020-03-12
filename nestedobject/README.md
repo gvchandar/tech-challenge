@@ -10,7 +10,7 @@ This challenge is implmented using Python 2.7
 
 Testing
 ---------------------
-```git clone ```
+```git clone ``` <br>/
 ```cd nestedobject```
 ```chmod 755 getValue.py```
 ```./getValue.py a/b/c ```
