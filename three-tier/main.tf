@@ -81,27 +81,48 @@ resource "aws_security_group" "default" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+#AWS ELB creation
+resource "aws_elb" "web" {
+  name = "terraform-example-elb"
 
-#resource "aws_elb" "web" {
-#  name = "terraform-example-elb"
-
-#  subnets         = ["${aws_subnet.default.id}"]
-#  security_groups = ["${aws_security_group.elb.id}"]
-#  instances       = ["${aws_instance.web.id}"]
-
-#  listener {
-#    instance_port     = 80
-#    instance_protocol = "http"
-#    lb_port           = 80
-#    lb_protocol       = "http"
-#  }
-#}
+  subnets         = ["${aws_subnet.default.id}"]
+  security_groups = ["${aws_security_group.elb.id}"]
+  instances       = ["${aws_instance.web.id}"]
+ listener {
+    instance_port     = 80
+    instance_protocol = "http"
+    lb_port           = 80
+    lb_protocol       = "http"
+  }
+}
 
 resource "aws_key_pair" "auth" {
   key_name   = "${var.key_name}"
   public_key = "${file(var.public_key_path)}"
 }
 
+# AWS RDS resource creation
+resource "aws_db_instance" "default" {
+  depends_on             = ["aws_security_group.default"]
+  identifier             = "${var.identifier}"
+  allocated_storage      = "${var.storage}"
+  engine                 = "${var.engine}"
+  engine_version         = "${lookup(var.engine_version, var.engine)}"
+  instance_class         = "${var.instance_class}"
+  name                   = "${var.db_name}"
+  username               = "${var.username}"
+  password               = "${var.password}"
+  vpc_security_group_ids = ["${aws_security_group.default.id}"]
+  db_subnet_group_name   = "${aws_db_subnet_group.default.id}"
+}
+
+resource "aws_db_subnet_group" "default" {
+  name        = "main_subnet_group"
+  description = "Our main group of subnets"
+  subnet_ids  = ["${aws_subnet.subnet_1.id}", "${aws_subnet.subnet_2.id}"]
+}
+
+# AWS EC2 instance resource creation
 resource "aws_instance" "web" {
   # The connection block tells our provisioner how to
   # communicate with the resource (instance)
