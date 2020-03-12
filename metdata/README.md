@@ -10,25 +10,25 @@ Installing
 This program runs on Python 2.7.x<br />
 Install requests and json python libraries<br />
 ```
-pip install requests<br />
-pip install json<br />
+pip install requests
+pip install json
 ```
 For better key/value pair display install jq library<br />
 
 
 Testing
 ----------
-chmod 755 metadata.py <br />
+chmod 755 metadata.py 
 If no command line argument is provided, the system prints dump of all key values pair in JSON formatted<br />
 ```
-./metadata.py <br />
+./metadata.py 
 ```
 To get better display of the output , pipe the output to jq<br />
 ```
-./metadata.py  | jq <br />
+./metadata.py  | jq 
 ```
 To get value of a  key, pass the key as command line argument<br />
 e.g<br />
 ```
-./metadata.py hostname<br />
+./metadata.py hostname
 ```
