@@ -10,8 +10,8 @@ This challenge is implmented using Python 2.7
 
 Testing
 ---------------------
-```git clone ``` <br>
-```cd nestedobject``` <br>
+```git clone https://github.com/gvchandar/tech-challenge.git ``` <br>
+```cd tech-challenge/nestedobject``` <br>
 ```chmod 755 getValue.py``` <br>
 ```./getValue.py a/b/c ```<br> 
 OR<br>
