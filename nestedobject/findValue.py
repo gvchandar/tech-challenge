@@ -9,7 +9,7 @@ def get_in(Dict_test, key_str):
      print("Not valid key : Enter key as a/b/c or x/y/z")
      sys.exit(1)
   print(splitStringArray)
-  print(Dict_test[splitStringArray[0]][splitStringArray[1]][splitStringArray[2]])
+  print(" Value is " + Dict_test[splitStringArray[0]][splitStringArray[1]][splitStringArray[2]])
 
 if __name__ == '__main__':
   Data = {
