@@ -28,6 +28,9 @@ To get better display of the output , pipe the output to jq<br />
 ./metadata.py  | jq 
 ```
 To get value of a  key, pass the key as command line argument<br />
+```
+./metadata.py keyName
+```
 e.g<br />
 ```
 ./metadata.py hostname
