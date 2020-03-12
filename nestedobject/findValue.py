@@ -2,7 +2,6 @@
 import sys
 
 def get_in(Dict_test, key_str):
-
   print(" Dictionary Object is: " + str(Dict_test))
   print(" Key is: " + key_str)
   splitStringArray = key_str.split('/')
