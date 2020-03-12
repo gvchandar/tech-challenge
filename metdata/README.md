@@ -16,6 +16,8 @@ Testing
 ----------
 If no command line argument is provided, the system prints dump of all key values pair in JSON formatted<br />
 ```
+git clone https://github.com/gvchandar/tech-challenge.git 
+cd tech-challenge/metadata
 chmod 755 metadata.py 
 ./metadata.py 
 ```
