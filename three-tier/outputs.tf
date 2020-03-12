@@ -5,10 +5,13 @@ output "elb_address" {
 
 #EC2 details
 
-output "ec2_hostname" {
-  value = "${aws_instance.web.dns_name}"
+output "ec2_privatedns" {
+  value = "${aws_instance.web.private_dns}"
 }
 
+output "ec2_publicdns" {
+  value = "${aws_instance.web.public_dns}"
+}
 
 #RDS details
 output "subnet_group" {
